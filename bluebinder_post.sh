@@ -5,6 +5,12 @@ if [ -x /usr/bin/droid/droid-get-bt-address.sh ] ; then
     /usr/bin/droid/droid-get-bt-address.sh
 fi
 
+# Generate OBEX capabilities
+if [ -e "/usr/bin/obex-capabilities" ]; then
+    mkdir -p /var/lib/furilabs
+    /usr/bin/obex-capabilities > /var/lib/furilabs/obex-capabilities
+fi
+
 # If the bluetooth address is provided by another script use that
 if [ -f /var/lib/bluetooth/board-address ] ; then
     exit 0
