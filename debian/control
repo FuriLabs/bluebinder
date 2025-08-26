@@ -1,14 +1,14 @@
 Source: bluebinder
 Section: binary
 Priority: optional
-Maintainer: r3vn <giuseppe.corti@pm.me>
-Build-Depends: debhelper (>= 7),
+Maintainer: Bardia Moshiri <bardia@furilabs.com>
+Build-Depends: debhelper-compat (= 13),
                libglib2.0-dev,
                libglibutil-dev,
                libgbinder-dev (>= 1.0.7),
                libbluetooth-dev,
                libsystemd-dev,
-Standards-Version: 3.8.4
+Standards-Version: 4.7.0
 
 Package: bluebinder
 Section: binary
