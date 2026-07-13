@@ -6,6 +6,7 @@ ConditionPathExists=!/system-update
 
 [Service]
 Type=notify
+EnvironmentFile=-/var/lib/environment/bluebinder/*.conf
 ExecStartPre=/usr/bin/waitforservice '+(init.svc.*bt*|init.svc.*bluetooth*)'
 ExecStart=/usr/sbin/bluebinder
 ExecStartPost=/usr/bin/droid/bluebinder_post.sh
@@ -14,6 +15,7 @@ TimeoutStartSec=60
 # Sandboxing
 CapabilityBoundingSet=CAP_DAC_READ_SEARCH
 DeviceAllow=/dev/stdin r
+DeviceAllow=/dev/binder rw
 DeviceAllow=/dev/hwbinder rw
 DeviceAllow=/dev/vhci rw
 DeviceAllow=/dev/rfkill r
@@ -24,4 +26,3 @@ ProtectSystem=full
 
 [Install]
 WantedBy=graphical.target
-
